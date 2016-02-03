@@ -5,8 +5,8 @@ module scenes {
         private _type: string;
         private _text: string;
         private _imageName: string;
-        //public _alternatives: objects.Button[];
         private _bgImage: createjs.Bitmap;
+        public buttons: objects.Button[];
 
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor(data: objects.SceneData) {
@@ -14,6 +14,19 @@ module scenes {
             this._type = data.Type;
             this._text = data.Text;
             this._imageName = data.Image;
+
+            // add background image
+            this._bgImage = new createjs.Bitmap("../../Assets/images/" + this._imageName);
+
+            // Load alternatives into buttons
+            this.buttons = new Array();
+            var btnXpos: number = 10;
+            var btnYpos: number = 530;
+            for(var i:number = 0; i < data.Alternatives.length; i++){
+              this.buttons[i] = new objects.Button(btnXpos, btnYpos, data.Alternatives[i]);
+              btnXpos = btnXpos + 290;
+            }
+
             super();
         }
 
@@ -21,9 +34,15 @@ module scenes {
 
         // Start Method
         public start(): void {
-            // add background image
-            this._bgImage = new createjs.Bitmap("../../Assets/images/" + this._imageName);
+            // Assemble scene
+            // Background image
             this.addChild(this._bgImage);
+
+            // buttons
+            for(var i: number = 0; i < this.buttons.length; i++){
+              this.addChild(this.buttons[i]);
+              this.addChild(this.buttons[i].label);
+            }
 
             // add this scene to the global stage container
             stage.addChild(this);

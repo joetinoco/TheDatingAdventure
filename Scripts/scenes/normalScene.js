@@ -12,11 +12,22 @@ var scenes;
             this._type = data.Type;
             this._text = data.Text;
             this._imageName = data.Image;
+            this._bgImage = new createjs.Bitmap("../../Assets/images/" + this._imageName);
+            this.buttons = new Array();
+            var btnXpos = 10;
+            var btnYpos = 530;
+            for (var i = 0; i < data.Alternatives.length; i++) {
+                this.buttons[i] = new objects.Button(btnXpos, btnYpos, data.Alternatives[i]);
+                btnXpos = btnXpos + 290;
+            }
             _super.call(this);
         }
         NormalScene.prototype.start = function () {
-            this._bgImage = new createjs.Bitmap("../../Assets/images/" + this._imageName);
             this.addChild(this._bgImage);
+            for (var i = 0; i < this.buttons.length; i++) {
+                this.addChild(this.buttons[i]);
+                this.addChild(this.buttons[i].label);
+            }
             stage.addChild(this);
         };
         NormalScene.prototype.update = function () {

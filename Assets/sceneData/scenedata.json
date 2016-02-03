@@ -6,7 +6,7 @@
     "Image": "Slide1.PNG",
     "Alternatives" : [
       {
-        "caption": "First button",
+        "caption": "First button has a really long caption, don't you think?",
         "targetID": 2,
         "feedbackText": "You clicked the first button",
         "requirement": "",

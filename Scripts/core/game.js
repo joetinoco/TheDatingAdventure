@@ -3,9 +3,6 @@ var stage;
 var stats;
 var currentScene;
 var scene;
-var intro;
-var leftCave;
-var rightCave;
 var sceneLibrary;
 var request = new XMLHttpRequest();
 request.onload = function () {
@@ -43,25 +40,5 @@ function setupStats() {
     document.body.appendChild(stats.domElement);
 }
 function changeScene() {
-    switch (scene) {
-        case config.Scene.INTRO:
-            stage.removeAllChildren();
-            intro = new scenes.Intro();
-            currentScene = intro;
-            console.log("Starting INTRO Scene");
-            break;
-        case config.Scene.LEFT_CAVE:
-            stage.removeAllChildren();
-            leftCave = new scenes.LeftCave();
-            currentScene = leftCave;
-            console.log("Starting LEFT_CAVE Scene");
-            break;
-        case config.Scene.RIGHT_CAVE:
-            stage.removeAllChildren();
-            rightCave = new scenes.RightCave();
-            currentScene = rightCave;
-            console.log("Starting RIGHT_CAVE Scene");
-            break;
-    }
 }
 //# sourceMappingURL=game.js.map

@@ -7,29 +7,32 @@ var objects;
 (function (objects) {
     var Button = (function (_super) {
         __extends(Button, _super);
-        //CONSTRUCTOR
-        function Button(pathString, x, y) {
-            _super.call(this, "../../Assets/images/" + pathString + ".png");
+        function Button(x, y, btnData) {
+            _super.call(this, "../../Assets/images/AlternativeButton.png");
             this.x = x;
             this.y = y;
-            this.width = 150;
-            this.height = 50;
-            this.regX = this.width * 0.5;
-            this.regY = this.height * 0.5;
+            this.alpha = 0.7;
+            this.alternative = btnData;
+            this.width = 280;
+            this.height = 130;
+            this.regX = 0;
+            this.regY = 0;
+            this.label = new objects.Label(btnData.caption, "20px Arial", "#FFFFFF", x + (this.width * 0.5), y + (this.height * 0.5), this.width - 10);
             this.on("mouseover", this.overButton, this);
             this.on("mouseout", this.outButton, this);
+            this.on("click", this.clickButton, this);
         }
-        // PRIVATE METHODS
-        // Event Handler for mouse over
         Button.prototype.overButton = function (event) {
-            event.currentTarget.alpha = 0.7;
-        };
-        // Event Handler for mouse out
-        Button.prototype.outButton = function (event) {
             event.currentTarget.alpha = 1.0;
         };
+        Button.prototype.outButton = function (event) {
+            event.currentTarget.alpha = 0.7;
+        };
+        Button.prototype.clickButton = function (event) {
+            console.log("Next scene: " + this.alternative.targetID);
+        };
         return Button;
-    })(createjs.Bitmap);
+    }(createjs.Bitmap));
     objects.Button = Button;
 })(objects || (objects = {}));
 //# sourceMappingURL=button.js.map
