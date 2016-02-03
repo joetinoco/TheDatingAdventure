@@ -1,0 +1,76 @@
+[
+  {
+    "ID": 1,
+    "Type": "start",
+    "Text": "",
+    "Image": "Slide1.PNG",
+    "Alternatives" : [
+      {
+        "caption": "First button",
+        "targetID": 2,
+        "feedbackText": "You clicked the first button",
+        "requirement": "",
+        "requirementMinAmount": "",
+        "selectLimit": -1
+      },
+      {
+        "caption": "Second button",
+        "targetID": 3,
+        "feedbackText": "You clicked the second button",
+        "requirement": "",
+        "requirementMinAmount": "",
+        "selectLimit": -1
+      }
+    ]
+  },
+
+  {
+    "ID": 2,
+    "Type": "normal",
+    "Text": "Slide2.PNG",
+    "Image": "",
+    "Alternatives" : [
+      {
+        "caption": "Slide 2 First button",
+        "targetID": 2,
+        "feedbackText": "Slide 2 You clicked the first button",
+        "requirement": "",
+        "requirementMinAmount": "",
+        "selectLimit": -1
+      },
+      {
+        "caption": "Slide 2 Second button",
+        "targetID": 3,
+        "feedbackText": "Slide 2 You clicked the second button",
+        "requirement": "",
+        "requirementMinAmount": "",
+        "selectLimit": -1
+      }
+    ]
+  },
+
+  {
+    "ID": 3,
+    "Type": "normal",
+    "Text": "",
+    "Image": "Slide3.PNG",
+    "Alternatives" : [
+      {
+        "caption": "Slide 3 First button",
+        "targetID": 2,
+        "feedbackText": "Slide 3 You clicked the first button",
+        "requirement": "",
+        "requirementMinAmount": "",
+        "selectLimit": -1
+      },
+      {
+        "caption": "Slide 3 Second button",
+        "targetID": 3,
+        "feedbackText": "Slide 3 You clicked the second button",
+        "requirement": "",
+        "requirementMinAmount": "",
+        "selectLimit": -1
+      }
+    ]
+  }
+]
