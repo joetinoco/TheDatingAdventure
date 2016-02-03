@@ -1,0 +1,76 @@
+[
+  {
+    "ID": 1,
+    "Type": "start",
+    "Text": "",
+    "Image": "Scene1.PNG",
+    "Alternatives" : [
+      {
+        "buttonText": "First button",
+        "targetID": 2,
+        "feedbackText": "You clicked the first button",
+        "requirement": "",
+        "requirementMinAmount": "",
+        "selectLimit": -1
+      },
+      {
+        "buttonText": "Second button",
+        "targetID": 3,
+        "feedbackText": "You clicked the second button",
+        "requirement": "",
+        "requirementMinAmount": "",
+        "selectLimit": -1
+      }
+    ]
+  },
+
+  {
+    "ID": 2,
+    "Type": "normal",
+    "Text": "Scene2.PNG",
+    "Image": "",
+    "Alternatives" : [
+      {
+        "buttonText": "Scene 2 First button",
+        "targetID": 2,
+        "feedbackText": "Scene 2 You clicked the first button",
+        "requirement": "",
+        "requirementMinAmount": "",
+        "selectLimit": -1
+      },
+      {
+        "buttonText": "Scene 2 Second button",
+        "targetID": 3,
+        "feedbackText": "Scene 2 You clicked the second button",
+        "requirement": "",
+        "requirementMinAmount": "",
+        "selectLimit": -1
+      }
+    ]
+  },
+
+  {
+    "ID": 3,
+    "Type": "normal",
+    "Text": "",
+    "Image": "Scene3.PNG",
+    "Alternatives" : [
+      {
+        "buttonText": "Scene 3 First button",
+        "targetID": 2,
+        "feedbackText": "Scene 3 You clicked the first button",
+        "requirement": "",
+        "requirementMinAmount": "",
+        "selectLimit": -1
+      },
+      {
+        "buttonText": "Scene 3 Second button",
+        "targetID": 3,
+        "feedbackText": "Scene 3 You clicked the second button",
+        "requirement": "",
+        "requirementMinAmount": "",
+        "selectLimit": -1
+      }
+    ]
+  }
+]
