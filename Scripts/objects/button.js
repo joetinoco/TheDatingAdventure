@@ -12,7 +12,7 @@ var objects;
             this.x = x;
             this.y = y;
             this.alpha = 0.7;
-            this.alternative = btnData;
+            this.choiceData = btnData;
             this.width = 280;
             this.height = 130;
             this.regX = 0;
@@ -29,8 +29,23 @@ var objects;
             event.currentTarget.alpha = 0.7;
         };
         Button.prototype.clickButton = function (event) {
-            console.log("Next scene: " + this.alternative.targetID);
-            currentScene = sceneLibrary[this.alternative.targetID];
+            if (this.choiceData.powerUps) {
+                this.choiceData.powerUps.forEach(function (pow) {
+                    playerPowers.setPowerUp(Object.keys(pow)[0], pow[Object.keys(pow)[0]]);
+                });
+            }
+            if (this.choiceData.targetID) {
+                currentScene = sceneLibrary[this.choiceData.targetID];
+            }
+            else {
+                var nextSceneID = undefined;
+                this.choiceData.targetConditionals.forEach(function (condition) {
+                    if (playerPowers.getPowerUp(condition.powerUp) === condition.value) {
+                        nextSceneID = condition.targetID;
+                    }
+                    currentScene = sceneLibrary[nextSceneID];
+                });
+            }
             currentScene.start();
         };
         return Button;

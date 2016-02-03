@@ -2,7 +2,7 @@ var canvas;
 var stage;
 var stats;
 var currentScene;
-var scene;
+var playerPowers;
 var sceneLibrary;
 function loadGame() {
     var request = new XMLHttpRequest();
@@ -25,6 +25,7 @@ function init() {
     createjs.Ticker.setFPS(config.Game.FPS);
     createjs.Ticker.on("tick", gameLoop, this);
     setupStats();
+    playerPowers = new objects.powerUps();
     currentScene = sceneLibrary[1];
     currentScene.start();
 }

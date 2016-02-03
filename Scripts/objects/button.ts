@@ -3,14 +3,14 @@
         width: number;
         height: number;
         public label: objects.Label;
-        alternative: objects.Alternative;
+        choiceData: objects.Alternative;
         //CONSTRUCTOR
-        constructor(x:number, y: number, btnData: Alternative) {
+        constructor(x:number, y: number, btnData: any) {
             super("../../Assets/images/AlternativeButton.png");
             this.x = x;
             this.y = y;
             this.alpha = 0.7
-            this.alternative = btnData;
+            this.choiceData = btnData;
 
             this.width = 280;
             this.height = 130;
@@ -40,9 +40,29 @@
         }
 
         clickButton(event: createjs.MouseEvent): void {
-            console.log("Next scene: " + this.alternative.targetID);
-            currentScene = sceneLibrary[this.alternative.targetID];
-            currentScene.start();
+          // Update powerups according to the user choice
+          if (this.choiceData.powerUps){
+            this.choiceData.powerUps.forEach(function(pow: Object){
+              playerPowers.setPowerUp(Object.keys(pow)[0], pow[Object.keys(pow)[0]]);
+            });
+          }
+
+          // For straightforward transitions, just load the corresponding scene
+          if (this.choiceData.targetID){
+            currentScene = sceneLibrary[this.choiceData.targetID];
+          } else {
+            // For conditional transitions, evaluate each one to decide the outcome
+            var nextSceneID: number = undefined;
+            this.choiceData.targetConditionals.forEach(function(condition: any){
+              if (playerPowers.getPowerUp(condition.powerUp) === condition.value){
+                nextSceneID = condition.targetID;
+              }
+              currentScene = sceneLibrary[nextSceneID];
+            });
+
+          }
+          // Start the next scene
+          currentScene.start();
         }
 
     }

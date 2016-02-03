@@ -6,7 +6,7 @@ var stage: createjs.Stage;
 var stats: Stats;
 
 var currentScene: objects.Scene;
-var scene: number;
+var playerPowers: objects.powerUps;
 
 // Game Scenes
 var sceneLibrary: scenes.NormalScene[];
@@ -46,6 +46,9 @@ function init(): void {
 
     // sets up our stats counting workflow
     setupStats();
+
+    // Init powerup bank
+    playerPowers = new objects.powerUps();
 
     // Start first scene
     currentScene = sceneLibrary[1];

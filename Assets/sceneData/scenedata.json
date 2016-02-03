@@ -8,7 +8,10 @@
     "Alternatives" : [
       {
         "caption": "Let's play!",
-        "targetID": 2
+        "targetID": 2,
+        "powerUps": [
+            { "TTC": 0 }
+        ]
       }
     ]
   },
@@ -52,13 +55,17 @@
         "caption": "Try to steal a kiss",
         "targetID": 4,
         "feedbackText": "",
-        "TTC": 0
+        "powerUps": [
+            { "TTC": 0 }
+        ]
       },
       {
         "caption": "Ask 'Can I hold your hand?'",
         "targetID": 4,
         "feedbackText": "",
-        "TTC": 1
+        "powerUps": [
+            { "TTC": 1 }
+        ]
       }
     ]
   },
@@ -97,13 +104,17 @@
         "caption": "'Do you wanna make out?'",
         "targetID": 6,
         "feedbackText": "",
-        "TTC": 1
+        "powerUps": [
+            { "TTC": 1 }
+        ]
       },
       {
         "caption": "Move a hand up her leg",
         "targetID": 6,
         "feedbackText": "",
-        "TTC": 0
+        "powerUps": [
+            { "TTC": 0 }
+        ]
       },
       {
         "caption": "Keep watching the movie",
@@ -171,13 +182,17 @@
         "caption": "'Is it OK if I dance this close to you?'",
         "targetID": 10,
         "feedbackText": "",
-        "TTC": 1
+        "powerUps": [
+            { "TTC": 1 }
+        ]
       },
       {
         "caption": "Slide a hand down her waist",
         "targetID": 10,
         "feedbackText": "",
-        "TTC": 0
+        "powerUps": [
+            { "TTC": 0 }
+        ]
       },
       {
         "caption": "'Let's get a drink at the bar'",
@@ -264,9 +279,9 @@
       },
       {
         "caption": "Ask: 'Do you wanna have sex with me?'",
-        "targetConditions": [
-          { "condAttribute": "TTC", "value": 0, "targetID": 14 },
-          { "condAttribute": "TTC", "value": 1, "targetID": 12 }
+        "targetConditionals": [
+          { "powerUp": "TTC", "value": 0, "targetID": 12 },
+          { "powerUp": "TTC", "value": 1, "targetID": 14 }
         ],
         "feedbackText": ""
       }
