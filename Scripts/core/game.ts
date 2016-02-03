@@ -11,22 +11,22 @@ var scene: number;
 // Game Scenes
 var sceneLibrary: scenes.NormalScene[];
 
-// Load scene data from a JSON and create the scene library
-var request = new XMLHttpRequest();
-request.onload = function() {
-  sceneLibrary = new Array();
-  var sceneJsonData = JSON.parse(this.responseText);
-  for (var i: number = 0; i < sceneJsonData.length; i++){
-    sceneLibrary[sceneJsonData[i].ID] = new scenes.NormalScene(sceneJsonData[i]);
-  }
-  console.log(sceneLibrary);
+function loadGame(): void {
+  // Load scene data from a JSON and create the scene library
+  var request = new XMLHttpRequest();
+  request.onload = function() {
+    sceneLibrary = new Array();
+    var sceneJsonData = JSON.parse(this.responseText);
+    for (var i: number = 0; i < sceneJsonData.length; i++){
+      sceneLibrary[sceneJsonData[i].ID] = new scenes.NormalScene(sceneJsonData[i]);
+    }
+    console.log(sceneLibrary);
 
-  // Start first scene
-  currentScene = sceneLibrary[1];
-  currentScene.start();
-};
-request.open("get", "../Assets/sceneData/scenedata.json", true);
-request.send();
+    init();
+  };
+  request.open("get", "../Assets/sceneData/scenedata.json", true);
+  request.send();
+}
 
 function init(): void {
     // create a reference the HTML canvas Element
@@ -47,6 +47,9 @@ function init(): void {
     // sets up our stats counting workflow
     setupStats();
 
+    // Start first scene
+    currentScene = sceneLibrary[1];
+    currentScene.start();
 }
 
 // Main Game Loop function that handles what happens each "tick" or frame

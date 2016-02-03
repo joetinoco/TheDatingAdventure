@@ -18,7 +18,7 @@
             this.regX = 0;
             this.regY = 0;
 
-            this.label = new Label(btnData.caption, "20px Arial", "#FFFFFF",
+            this.label = new Label(btnData.caption, "30px 'Caveat Brush'", "#FFFFFF",
               x + (this.width * 0.5), y + (this.height * 0.5),
               this.width - 10);
 
@@ -41,6 +41,8 @@
 
         clickButton(event: createjs.MouseEvent): void {
             console.log("Next scene: " + this.alternative.targetID);
+            currentScene = sceneLibrary[this.alternative.targetID];
+            currentScene.start();
         }
 
     }

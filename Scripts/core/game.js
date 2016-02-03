@@ -4,19 +4,20 @@ var stats;
 var currentScene;
 var scene;
 var sceneLibrary;
-var request = new XMLHttpRequest();
-request.onload = function () {
-    sceneLibrary = new Array();
-    var sceneJsonData = JSON.parse(this.responseText);
-    for (var i = 0; i < sceneJsonData.length; i++) {
-        sceneLibrary[sceneJsonData[i].ID] = new scenes.NormalScene(sceneJsonData[i]);
-    }
-    console.log(sceneLibrary);
-    currentScene = sceneLibrary[1];
-    currentScene.start();
-};
-request.open("get", "../Assets/sceneData/scenedata.json", true);
-request.send();
+function loadGame() {
+    var request = new XMLHttpRequest();
+    request.onload = function () {
+        sceneLibrary = new Array();
+        var sceneJsonData = JSON.parse(this.responseText);
+        for (var i = 0; i < sceneJsonData.length; i++) {
+            sceneLibrary[sceneJsonData[i].ID] = new scenes.NormalScene(sceneJsonData[i]);
+        }
+        console.log(sceneLibrary);
+        init();
+    };
+    request.open("get", "../Assets/sceneData/scenedata.json", true);
+    request.send();
+}
 function init() {
     canvas = document.getElementById("canvas");
     stage = new createjs.Stage(canvas);
@@ -24,6 +25,8 @@ function init() {
     createjs.Ticker.setFPS(config.Game.FPS);
     createjs.Ticker.on("tick", gameLoop, this);
     setupStats();
+    currentScene = sceneLibrary[1];
+    currentScene.start();
 }
 function gameLoop(event) {
     stats.begin();

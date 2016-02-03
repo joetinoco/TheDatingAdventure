@@ -17,7 +17,7 @@ var objects;
             this.height = 130;
             this.regX = 0;
             this.regY = 0;
-            this.label = new objects.Label(btnData.caption, "20px Arial", "#FFFFFF", x + (this.width * 0.5), y + (this.height * 0.5), this.width - 10);
+            this.label = new objects.Label(btnData.caption, "30px 'Caveat Brush'", "#FFFFFF", x + (this.width * 0.5), y + (this.height * 0.5), this.width - 10);
             this.on("mouseover", this.overButton, this);
             this.on("mouseout", this.outButton, this);
             this.on("click", this.clickButton, this);
@@ -30,6 +30,8 @@ var objects;
         };
         Button.prototype.clickButton = function (event) {
             console.log("Next scene: " + this.alternative.targetID);
+            currentScene = sceneLibrary[this.alternative.targetID];
+            currentScene.start();
         };
         return Button;
     }(createjs.Bitmap));
