@@ -32,14 +32,6 @@ var scenes;
         };
         NormalScene.prototype.update = function () {
         };
-        NormalScene.prototype._leftCaveButtonClick = function (event) {
-            scene = config.Scene.LEFT_CAVE;
-            changeScene();
-        };
-        NormalScene.prototype._rightCaveButtonClick = function (event) {
-            scene = config.Scene.RIGHT_CAVE;
-            changeScene();
-        };
         return NormalScene;
     }(objects.Scene));
     scenes.NormalScene = NormalScene;

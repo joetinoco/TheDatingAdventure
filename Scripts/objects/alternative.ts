@@ -3,6 +3,7 @@ module objects {
     caption: string,
     targetID: number,
     feedbackText: string,
+    selectionLimit: number,
     powerUps: Object[],
     targetConditionals: Object[]
   }

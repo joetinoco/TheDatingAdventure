@@ -6,7 +6,7 @@ module scenes {
         private _text: string;
         private _imageName: string;
         private _bgImage: createjs.Bitmap;
-        public buttons: objects.Button[];
+        private buttons: objects.Button[];
 
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor(data: objects.SceneData) {
@@ -48,26 +48,9 @@ module scenes {
             stage.addChild(this);
         }
 
-        // INTRO Scene updates here
         public update(): void {
 
         }
 
-
-        //EVENT HANDLERS ++++++++++++++++++++
-
-        // LEFT_CAVE Button click event handler
-        private _leftCaveButtonClick(event: createjs.MouseEvent) {
-            // Switch to the LEFT_CAVE Scene
-            scene = config.Scene.LEFT_CAVE;
-            changeScene();
-        }
-
-        // LEFT_CAVE Button click event handler
-        private _rightCaveButtonClick(event: createjs.MouseEvent) {
-            // Switch to the LEFT_CAVE Scene
-            scene = config.Scene.RIGHT_CAVE;
-            changeScene();
-        }
     }
 }
