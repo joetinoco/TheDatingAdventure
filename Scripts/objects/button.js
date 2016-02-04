@@ -19,7 +19,7 @@ var objects;
             this.height = 130;
             this.regX = 0;
             this.regY = 0;
-            this.label = new objects.Label(btnData.caption, "30px 'Caveat Brush'", "#FFFFFF", x + (this.width * 0.5), y + (this.height * 0.5), this.width - 20);
+            this.label = new objects.Label(btnData.caption, "30px 'Caveat Brush'", "#FFFFFF", x + (this.width * 0.5), y + (this.height * 0.5), this.width - 30);
             if (this.choiceData.selectionLimit > 0 || this.choiceData.selectionLimit === undefined) {
                 this.enableButton();
             }

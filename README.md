@@ -1,3 +1,7 @@
-# COMP397-W2016-TheNewDragon
+# The Dating Adventure
 
-COMP397 The New Dragon Template for Web Game Programming @ Centennial
+Will you get lucky tonight?
+
+Play it online at http://josetinoco.com/thedatingadventure/ or http://mydatingadventure.azurewebsites.net
+
+A game by Joseph Tinoco - Winter 2016

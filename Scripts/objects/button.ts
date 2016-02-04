@@ -24,7 +24,7 @@
 
             this.label = new Label(btnData.caption, "30px 'Caveat Brush'", "#FFFFFF",
               x + (this.width * 0.5), y + (this.height * 0.5),
-              this.width - 20);
+              this.width - 30);
             if (this.choiceData.selectionLimit > 0 || this.choiceData.selectionLimit === undefined){
               this.enableButton();
             } else {

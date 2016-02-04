@@ -33,7 +33,7 @@
         "feedbackText": ""
       },
       {
-        "caption": "'Let's go to a nightclub'",
+        "caption": "'Let's go to a nightclub, what do you say?'",
         "targetID": 7,
         "feedbackText": ""
       }
@@ -141,7 +141,7 @@
         "feedbackText": ""
       },
       {
-        "caption": "'Let's hit the nightclub!'",
+        "caption": "'Let's hit the night club!'",
         "targetID": 7,
         "feedbackText": ""
       }

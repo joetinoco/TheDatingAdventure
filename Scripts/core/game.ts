@@ -1,5 +1,21 @@
 ﻿/// <reference path = "_reference.ts" />
 
+/*
+
+    THE DATING ADVENTURE
+    ====================
+    
+    Will you get lucky tonight?
+    
+    Developed as a COMP397 (Web Game Programming) assignment.
+    
+    Created and programmed by Joseph Tinoco - Winter 2016
+    
+    Contains excerpts from https://github.com/CentennialCollege/COMP397-W2016-TheNewDragon
+    
+*/
+
+
 //
 // Global variables
 //
