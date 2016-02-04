@@ -28,7 +28,7 @@ function loadGame(): void {
 
     init();
   };
-  request.open("get", "../Assets/sceneData/scenedata.json", true);
+  request.open("get", "Assets/sceneData/scenedata.json", true);
   request.send();
 }
 

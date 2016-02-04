@@ -14,7 +14,7 @@ var objects;
             this._type = data.Type;
             this._text = data.Text;
             this._imageName = data.Image;
-            this._bgImage = new createjs.Bitmap("../../Assets/images/" + this._imageName);
+            this._bgImage = new createjs.Bitmap("Assets/images/" + this._imageName);
             // Load alternatives into buttons
             this.buttons = new Array();
             var btnXpos = 10;

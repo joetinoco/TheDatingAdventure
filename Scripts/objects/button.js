@@ -10,7 +10,7 @@ var objects;
     var Button = (function (_super) {
         __extends(Button, _super);
         function Button(x, y, btnData) {
-            _super.call(this, "../../Assets/images/AlternativeButton.png");
+            _super.call(this, "Assets/images/AlternativeButton.png");
             this.x = x;
             this.y = y;
             this.alpha = 0.7;

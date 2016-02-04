@@ -12,7 +12,7 @@
         enabled: boolean; 
 
         constructor(x:number, y: number, btnData: any) {
-            super("../../Assets/images/AlternativeButton.png");
+            super("Assets/images/AlternativeButton.png");
             this.x = x;
             this.y = y;
             this.alpha = 0.7;
