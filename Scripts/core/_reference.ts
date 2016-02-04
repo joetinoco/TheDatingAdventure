@@ -8,6 +8,3 @@
 /// <reference path="../objects/sceneData.ts" />
 
 /// <reference path="../scenes/normalScene.ts" />
-/// <reference path="../scenes/rightcave.ts" />
-/// <reference path="../scenes/leftcave.ts" />
-/// <reference path="../scenes/intro.ts" />

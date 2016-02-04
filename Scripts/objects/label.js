@@ -5,8 +5,10 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var objects;
 (function (objects) {
+    // Labels are used to display button text captions
     var Label = (function (_super) {
         __extends(Label, _super);
+        // CONSTRUCTOR METHOD +++++++++++++++++++++++++++++++++++
         function Label(labelString, labelFont, labelColour, x, y, maxWidth) {
             _super.call(this, labelString, labelFont, labelColour);
             this.lineWidth = maxWidth;
@@ -16,7 +18,7 @@ var objects;
             this.y = y;
         }
         return Label;
-    }(createjs.Text));
+    })(createjs.Text);
     objects.Label = Label;
 })(objects || (objects = {}));
 //# sourceMappingURL=label.js.map

@@ -1,5 +1,5 @@
 ﻿module objects {
-    // LABEL CLASS ++++++++++++++++++++++++++++++++++++++++++++++
+    // Labels are used to display button text captions
     export class Label extends createjs.Text {
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++++++++++++
         constructor(labelString: string, labelFont: string, labelColour: string, x: number, y: number, maxWidth: number) {

@@ -11,7 +11,7 @@ var objects;
             return this._powers[name];
         };
         return powerUps;
-    }());
+    })();
     objects.powerUps = powerUps;
 })(objects || (objects = {}));
 //# sourceMappingURL=powerups.js.map

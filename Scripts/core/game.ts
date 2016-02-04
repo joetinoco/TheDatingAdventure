@@ -1,16 +1,20 @@
 ﻿/// <reference path = "_reference.ts" />
 
-// global variables
+//
+// Global variables
+//
 var canvas: HTMLElement;
 var stage: createjs.Stage;
 var stats: Stats;
-
 var currentScene: objects.Scene;
 var playerPowers: objects.powerUps;
-
-// Game Scenes
+// Game Scenes will be loaded from a JSON file and stored here
 var sceneLibrary: scenes.NormalScene[];
 
+//
+// LOADGAME: This is the very first method loaded.
+// It loads game data from a JSON file and starts the game
+//
 function loadGame(): void {
   // Load scene data from a JSON and create the scene library
   var request = new XMLHttpRequest();
@@ -28,26 +32,25 @@ function loadGame(): void {
   request.send();
 }
 
+//
+// INIT: Start up the game
+//
 function init(): void {
-    // create a reference the HTML canvas Element
+    // Set up canvas and stage
     canvas = document.getElementById("canvas");
-
-    // create our main display list container
     stage = new createjs.Stage(canvas);
 
     // Enable mouse events
     stage.enableMouseOver(20);
 
-    // set the framerate to 60 frames per second
+    // Set framerate and the game loop
     createjs.Ticker.setFPS(config.Game.FPS);
-
-    // create an event listener to count off frames
     createjs.Ticker.on("tick", gameLoop, this);
 
     // sets up our stats counting workflow
     setupStats();
 
-    // Init powerup bank
+    // Initializes the player "power ups" bank
     playerPowers = new objects.powerUps();
 
     // Start first scene
@@ -55,18 +58,18 @@ function init(): void {
     currentScene.start();
 }
 
-// Main Game Loop function that handles what happens each "tick" or frame
+// 
+// GAMELOOP: runs every frame tick, updates the current scene
+// 
 function gameLoop(event: createjs.Event): void {
-    // start collecting stats for this frame
     stats.begin();
 
-    // calling State's update method
+    // Update scene elements
     currentScene.update();
 
-    // redraw/refresh stage every frame
+    // redraw/refresh scene elements
     stage.update();
 
-    // stop collecting stats for this frame
     stats.end();
 }
 
@@ -78,34 +81,4 @@ function setupStats(): void {
     stats.domElement.style.left = "0px";
     stats.domElement.style.top = "0px";
     document.body.appendChild(stats.domElement);
-}
-
-// Finite State Machine used to change Scenes
-function changeScene(): void {
-
-    // Launch various scenes
-    // switch (scene) {
-    //     case config.Scene.INTRO:
-    //         // show the MENU scene
-    //         stage.removeAllChildren();
-    //         intro = new scenes.Intro();
-    //         currentScene = intro;
-    //         console.log("Starting INTRO Scene");
-    //         break;
-    //     case config.Scene.LEFT_CAVE:
-    //         // show the PLAY scene
-    //         stage.removeAllChildren();
-    //         leftCave = new scenes.LeftCave();
-    //         currentScene = leftCave;
-    //         console.log("Starting LEFT_CAVE Scene");
-    //         break;
-    //     case config.Scene.RIGHT_CAVE:
-    //         // show the game OVER scene
-    //         stage.removeAllChildren();
-    //         rightCave = new scenes.RightCave();
-    //         currentScene = rightCave;
-    //         console.log("Starting RIGHT_CAVE Scene");
-    //         break;
-    // }
-
 }
