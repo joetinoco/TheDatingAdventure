@@ -8,7 +8,6 @@ var objects;
     // Labels are used to display button text captions
     var Label = (function (_super) {
         __extends(Label, _super);
-        // CONSTRUCTOR METHOD +++++++++++++++++++++++++++++++++++
         function Label(labelString, labelFont, labelColour, x, y, maxWidth) {
             _super.call(this, labelString, labelFont, labelColour);
             this.lineWidth = maxWidth;

@@ -9,7 +9,7 @@ var stats: Stats;
 var currentScene: objects.Scene;
 var playerPowers: objects.powerUps;
 // Game Scenes will be loaded from a JSON file and stored here
-var sceneLibrary: scenes.NormalScene[];
+var sceneLibrary: objects.Scene[];
 
 //
 // LOADGAME: This is the very first method loaded.
@@ -22,7 +22,7 @@ function loadGame(): void {
     sceneLibrary = new Array();
     var sceneJsonData = JSON.parse(this.responseText);
     for (var i: number = 0; i < sceneJsonData.length; i++){
-      sceneLibrary[sceneJsonData[i].ID] = new scenes.NormalScene(sceneJsonData[i]);
+      sceneLibrary[sceneJsonData[i].ID] = new objects.Scene(sceneJsonData[i]);
     }
     console.log(sceneLibrary);
 

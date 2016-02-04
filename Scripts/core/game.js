@@ -20,7 +20,7 @@ function loadGame() {
         sceneLibrary = new Array();
         var sceneJsonData = JSON.parse(this.responseText);
         for (var i = 0; i < sceneJsonData.length; i++) {
-            sceneLibrary[sceneJsonData[i].ID] = new scenes.NormalScene(sceneJsonData[i]);
+            sceneLibrary[sceneJsonData[i].ID] = new objects.Scene(sceneJsonData[i]);
         }
         console.log(sceneLibrary);
         init();
