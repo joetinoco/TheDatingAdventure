@@ -24,24 +24,23 @@ var stage: createjs.Stage;
 var stats: Stats;
 var currentScene: objects.Scene;
 var playerPowers: objects.powerUps;
-// Game Scenes will be loaded from a JSON file and stored here
+// The game data is loaded from a JSON and stored here
+var stateMachineData: Object;
+// The gender selection menu
+var mainMenu: menus.genderMenu;
+// Game Scenes will be created from this data and stored here
 var sceneLibrary: objects.Scene[];
 
 //
 // LOADGAME: This is the very first method loaded.
-// It loads game data from a JSON file and starts the game
+// It loads game data from a JSON file and shows the gender selection menu
 //
 function loadGame(): void {
-  // Load scene data from a JSON and create the scene library
+  // Load scene data from JSON
   var request = new XMLHttpRequest();
   request.onload = function() {
-    sceneLibrary = new Array();
-    var sceneJsonData = JSON.parse(this.responseText);
-    for (var i: number = 0; i < sceneJsonData.length; i++){
-      sceneLibrary[sceneJsonData[i].ID] = new objects.Scene(sceneJsonData[i]);
-    }
-    console.log(sceneLibrary);
-
+    stateMachineData = new Object();
+    stateMachineData = JSON.parse(this.responseText);
     init();
   };
   request.open("get", "Assets/sceneData/scenedata.json", true);
@@ -49,12 +48,15 @@ function loadGame(): void {
 }
 
 //
-// INIT: Start up the game
+// INIT: Set up the game environment
 //
 function init(): void {
     // Set up canvas and stage
     canvas = document.getElementById("canvas");
     stage = new createjs.Stage(canvas);
+    
+    // Creates the main menu
+    mainMenu = new menus.genderMenu();
 
     // Enable mouse events
     stage.enableMouseOver(20);
@@ -65,13 +67,28 @@ function init(): void {
 
     // sets up our stats counting workflow
     setupStats();
+    
+    // Invokes the main menu
+    currentScene = mainMenu;
+    currentScene.start();
+}
 
+//
+// STARTNEWGAME: Initializes a new game
+//
+function startNewGame(dateGender: string): void {
+    sceneLibrary = new Array();
+    for (var i: number = 0; i < stateMachineData[dateGender].length; i++){
+      sceneLibrary[stateMachineData[dateGender][i].ID] = new objects.Scene(stateMachineData[dateGender][i]);
+    }
+    
     // Initializes the player "power ups" bank
     playerPowers = new objects.powerUps();
 
     // Start first scene
     currentScene = sceneLibrary[1];
     currentScene.start();
+        
 }
 
 // 

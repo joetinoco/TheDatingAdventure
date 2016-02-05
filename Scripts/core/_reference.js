@@ -3,5 +3,6 @@
 /// <reference path="../objects/label.ts" />
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/scene.ts" />
-/// <reference path="../objects/sceneData.ts" /> 
+/// <reference path="../objects/sceneData.ts" />
+/// <reference path="../menus/genderMenu.ts" /> 
 //# sourceMappingURL=_reference.js.map

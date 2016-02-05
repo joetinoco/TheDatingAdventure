@@ -71,9 +71,21 @@ var objects;
                             this.disableButton();
                     }
                 }
+                // A button with the 'loadStates' attribute reloads the entire game
+                // with the desired state set
+                if (this.choiceData.loadStateSet) {
+                    startNewGame(this.choiceData.loadStateSet);
+                }
                 // For straightforward transitions, just load the corresponding scene
                 if (this.choiceData.targetID) {
-                    currentScene = sceneLibrary[this.choiceData.targetID];
+                    if (this.choiceData.targetID === 0) {
+                        // ID 0 means 'send the user to the main menu'
+                        mainMenu.start();
+                    }
+                    else {
+                        currentScene = sceneLibrary[this.choiceData.targetID];
+                        currentScene.start();
+                    }
                 }
                 else {
                     // For conditional transitions, evaluate each one to decide the outcome
@@ -84,9 +96,8 @@ var objects;
                         }
                         currentScene = sceneLibrary[nextSceneID];
                     });
+                    currentScene.start();
                 }
-                // Start the next scene
-                currentScene.start();
             }
         };
         return Button;

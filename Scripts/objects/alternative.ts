@@ -13,5 +13,7 @@ module objects {
     powerUps: Object[],
     // If the outcome depends on any condition (say, a power-up), this array stores this info
     targetConditionals: Object[]
+    // For buttons that reload the whole game, this specifies which state set to load next.
+    loadStateSet: string
   }
 }

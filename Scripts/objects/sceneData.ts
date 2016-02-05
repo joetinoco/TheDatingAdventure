@@ -10,6 +10,6 @@ module objects {
     // The background image for the scene
     Image: string,
     // User alternatives for the scene - each one takes the player to a new scene.
-    Alternatives: objects.Alternative[],
+    Alternatives: Object[],
   }
 }
