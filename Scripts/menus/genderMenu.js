@@ -16,14 +16,17 @@ var menus;
                 "Image": "genderMenu.PNG",
                 "Alternatives": [
                     {
+                        "targetID": 1,
                         "caption": "I like men",
                         "loadStateSet": "male"
                     },
                     {
+                        "targetID": 1,
                         "caption": "I like women",
                         "loadStateSet": "female"
                     }
-                ]
+                ],
+                SelectionLimit: -1
             };
             _super.call(this, menuData);
         }

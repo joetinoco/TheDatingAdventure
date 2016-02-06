@@ -68,7 +68,8 @@
                 { "TTC": 1 }
             ]
         }
-        ]
+        ],
+        "SelectionLimit": 1
     },
 
     {
@@ -122,7 +123,8 @@
             "targetID": 6,
             "feedbackText": ""
         }
-        ]
+        ],
+        "SelectionLimit": 1
     },
 
     {
@@ -165,7 +167,8 @@
             "targetID": 9,
             "feedbackText": ""
         }
-        ]
+        ],
+        "SelectionLimit": 1
     },
 
     {
@@ -346,7 +349,7 @@
         "Alternatives" : [
         {
             "caption": "Restart game",
-            "targetID": 1,
+            "targetID": 0,
             "feedbackText": ""
         }
         ]
@@ -361,7 +364,7 @@
         "Alternatives" : [
         {
             "caption": "Try again",
-            "targetID": 1,
+            "targetID": 0,
             "feedbackText": ""
         }
         ]
@@ -376,7 +379,7 @@
         "Alternatives" : [
         {
             "caption": "Try again",
-            "targetID": 1,
+            "targetID": 0,
             "feedbackText": ""
         }
         ]
@@ -391,7 +394,7 @@
         "Alternatives" : [
         {
             "caption": "Try again",
-            "targetID": 1,
+            "targetID": 0,
             "feedbackText": ""
         }
         ]
@@ -468,7 +471,8 @@
                 { "TTC": 1 }
             ]
         }
-        ]
+        ],
+        "SelectionLimit": 1
     },
 
     {
@@ -480,7 +484,8 @@
         {
             "caption": "'How about we watch a movie?'",
             "targetID": 5,
-            "feedbackText": ""
+            "feedbackText": "",
+            "selectionLimit": 1
         },
         {
             "caption": "'Why don't we take this back to my place?'",
@@ -490,7 +495,8 @@
         {
             "caption": "'Let's go dance in a nightclub!'",
             "targetID": 7,
-            "feedbackText": ""
+            "feedbackText": "",
+            "selectionLimit": 1
         }
         ]
     },
@@ -522,7 +528,8 @@
             "targetID": 6,
             "feedbackText": ""
         }
-        ]
+        ],
+        "SelectionLimit": 1
     },
 
     {
@@ -534,7 +541,8 @@
         {
             "caption": "'Wanna eat something?'",
             "targetID": 3,
-            "feedbackText": ""
+            "feedbackText": "",
+            "selectionLimit": 1
         },
         {
             "caption": "'Why don't we go back to my apartment?'",
@@ -544,7 +552,8 @@
         {
             "caption": "'Let's hit the night club!'",
             "targetID": 7,
-            "feedbackText": ""
+            "feedbackText": "",
+            "selectionLimit": 1
         }
         ]
     },
@@ -565,7 +574,8 @@
             "targetID": 9,
             "feedbackText": ""
         }
-        ]
+        ],
+        "SelectionLimit": 1
     },
 
     {
@@ -642,12 +652,14 @@
         {
             "caption": "'Wanna watch a movie?'",
             "targetID": 5,
-            "feedbackText": ""
+            "feedbackText": "",
+            "selectionLimit": 1
         },
         {
             "caption": "'I'm hungry, let's eat something.'",
             "targetID": 3,
-            "feedbackText": ""
+            "feedbackText": "",
+            "selectionLimit": 1
         },
         {
             "caption": "'Let's go to the bar before we leave'",
@@ -746,7 +758,7 @@
         "Alternatives" : [
         {
             "caption": "Restart game",
-            "targetID": 1,
+            "targetID": 0,
             "feedbackText": ""
         }
         ]
@@ -761,7 +773,7 @@
         "Alternatives" : [
         {
             "caption": "Try again",
-            "targetID": 1,
+            "targetID": 0,
             "feedbackText": ""
         }
         ]
@@ -776,7 +788,7 @@
         "Alternatives" : [
         {
             "caption": "Try again",
-            "targetID": 1,
+            "targetID": 0,
             "feedbackText": ""
         }
         ]
@@ -791,7 +803,7 @@
         "Alternatives" : [
         {
             "caption": "Try again",
-            "targetID": 1,
+            "targetID": 0,
             "feedbackText": ""
         }
         ]

@@ -81,7 +81,7 @@ function startNewGame(dateGender: string): void {
     for (var i: number = 0; i < stateMachineData[dateGender].length; i++){
       sceneLibrary[stateMachineData[dateGender][i].ID] = new objects.Scene(stateMachineData[dateGender][i]);
     }
-    
+    console.log('Scene library "' + dateGender + '" loaded');
     // Initializes the player "power ups" bank
     playerPowers = new objects.powerUps();
 

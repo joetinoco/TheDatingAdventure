@@ -11,5 +11,7 @@ module objects {
     Image: string,
     // User alternatives for the scene - each one takes the player to a new scene.
     Alternatives: Object[],
+    // The number of times the user can visit this scene (-1 = unlimited)
+    SelectionLimit: number
   }
 }

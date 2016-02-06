@@ -25,32 +25,33 @@
             this.label = new Label(btnData.caption, "30px 'Caveat Brush'", "#FFFFFF",
               x + (this.width * 0.5), y + (this.height * 0.5),
               this.width - 30);
+              
+            // A button can only be enabled if if didn't reach its selection limit
             if (this.choiceData.selectionLimit > 0 || this.choiceData.selectionLimit === undefined){
               this.enableButton();
             } else {
               this.disableButton();
             }
-
+            
             // Add event listeners
             this.on("mouseover", this.overButton, this);
             this.on("mouseout", this.outButton, this);
             this.on("click", this.clickButton, this);
         }
 
-        // PRIVATE METHODS
-        disableButton(): void {
+        public disableButton(): void {
           this.alpha = 0.3;
           this.label.alpha = 0.3;
           this.enabled = false;
-          console.log('button disabled');
         }
 
-        enableButton(): void {
+        public enableButton(): void {
           this.alpha = 0.7;
           this.label.alpha = 0.7;
           this.enabled = true;
         }
-
+        
+        // PRIVATE METHODS
         // Event Handler for mouse over
         overButton(event: createjs.MouseEvent): void {
           if (this.enabled){
@@ -83,22 +84,25 @@
               }
             }
             
-            // A button with the 'loadStates' attribute reloads the entire game
+            // A button with the 'loadStateSet' attribute reloads the entire state machine
             // with the desired state set
             if (this.choiceData.loadStateSet){
                 startNewGame(this.choiceData.loadStateSet);
             }
 
             // For straightforward transitions, just load the corresponding scene
-            if (this.choiceData.targetID){
+            if (typeof this.choiceData.targetID !== 'undefined'){
                 if (this.choiceData.targetID === 0){
                     // ID 0 means 'send the user to the main menu'
-                    mainMenu.start();
+                    console.log('Restarting game');
+                    currentScene = mainMenu;
+                    currentScene.start();
                 } else {
                     currentScene = sceneLibrary[this.choiceData.targetID];
                     currentScene.start();
                 }
-            } else {
+            } 
+            if (typeof this.choiceData.targetID === 'undefined'){
               // For conditional transitions, evaluate each one to decide the outcome
               var nextSceneID: number = undefined;
               this.choiceData.targetConditionals.forEach(function(condition: any){
